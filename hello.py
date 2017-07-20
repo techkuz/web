@@ -1,11 +1,6 @@
-from cgi import parse_qs, escape
-
 def wcgi_application(environ, start_response):
-	d = parse_qs(environ["QUERY_STRING"])
-	for k,v in d.items():
-		print(k + "=" + v[0])
+	body = [bytes(i + '\n', 'ascii') for i in environ['QUERY_STRING'].split('&')]
 	status = "200 OK"
-	headers = [("Content-Type", "text/plain")]
-	body = b"Hello, World!"
+	headers = [("Content-Type", "text/plain")]	
 	start_response(status, headers)
-	return [body]
+	return body
