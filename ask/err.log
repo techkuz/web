@@ -1,0 +1,7 @@
+[2017-08-11 09:00:50 +0000] [9135] [INFO] Starting gunicorn 19.7.1
+[2017-08-11 09:00:50 +0000] [9135] [INFO] Listening at: http://0.0.0.0:8000 (9135)
+[2017-08-11 09:00:50 +0000] [9135] [INFO] Using worker: sync
+[2017-08-11 09:00:50 +0000] [9138] [INFO] Booting worker with pid: 9138
+[2017-08-11 09:01:06 +0000] [9135] [INFO] Handling signal: int
+[2017-08-11 09:01:06 +0000] [9138] [INFO] Worker exiting (pid: 9138)
+[2017-08-11 09:01:06 +0000] [9135] [INFO] Shutting down: Master
