@@ -2,3 +2,6 @@ cloud9 nano export TERM=screen
 gunicorn sudo gunicorn -b 0.0.0.0:8080 hello:wcgi_application
 symlinks sudo ln -s /etc/gunicorn.d /home/box/web/
 nginx sudo service nginx start
+
+sudo gunicorn -b 0.0.0.0:8000 ask.wsgi:application (из родительской папки, в которой лежит application)
+
