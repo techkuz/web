@@ -5,3 +5,24 @@ nginx sudo service nginx start
 
 sudo gunicorn -b 0.0.0.0:8000 ask.wsgi:application (из родительской папки, в которой лежит application)
 
+
+sudo ln -s /etc/gunicorn.d /home/box/web/
+mysql -uroot -e "create database ..."
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':   'mybase',
+    'USER':   'admin',
+    'PASSWORD': 'pass111',
+    }
+}
+
+Перед этим надо запустить MySQL, создать соответствующую базу 'mybase', пользователя 'admin' с паролем 'pass111', дать права пользователю на базу:
+
+sudo /etc/init.d/mysql start
+mysql -uroot -e "CREATE USER 'admin'@'localhost'"
+mysql -uroot -e "SET PASSWORD FOR 'admin'@'localhost' = PASSWORD('pass111')"
+mysql -uroot -e "CREATE DATABASE mybase"
+mysql -uroot -e "GRANT ALL ON mybase.* TO 'admin'@'localhost'"
